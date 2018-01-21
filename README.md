@@ -44,6 +44,10 @@ such as zhilian, lagou, 51jobs and so on.
     * export PYTHONPATH=:/home/$username/JOB-DATA-MINING/job_data_mining
     * 执行source .bashrc使之生效
     * 可用 echo $PYTHONPATH 确定./bashrc是否生效
+    
+* 安装结巴分词器
+    * https://github.com/fxsjy/jieba处下载结巴工程
+    * 将jieba-master下的jieba文件夹放置于job-data-mining目录下
 
 * 建立数据库
     * 用$password指代mysql密码
