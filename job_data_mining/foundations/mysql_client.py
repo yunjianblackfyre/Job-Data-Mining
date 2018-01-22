@@ -1,6 +1,5 @@
-#COPYRIGHT: Tencent flim
-#   AUTHOR: paveehan,eugenechen
-#     DATE: 2016-07-18
+#   AUTHOR: Sibyl System
+#     DATE: 2017-12-30
 #     DESC: mysql client
 
 import mysql.connector
