@@ -1,6 +1,5 @@
-#COPYRIGHT: Tencent flim
-#   AUTHOR: eugenechen
-#     DATE: 2016-07-12
+#   AUTHOR: Sibyl System
+#     DATE: 2017-12-30
 #     DESC: exception
 
 
