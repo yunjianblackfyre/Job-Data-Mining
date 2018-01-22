@@ -1,6 +1,5 @@
-#COPYRIGHT: Tencent flim
-#   AUTHOR: paveehan
-#     DATE: 2016-07-18
+#   AUTHOR: Sibyl System
+#     DATE: 2017-12-30
 #     DESC: sched
 
 import logging
