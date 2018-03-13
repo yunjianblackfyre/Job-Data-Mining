@@ -18,7 +18,7 @@ such as zhilian, lagou, 51jobs and so on.
    产品经理类（产品设计、视觉设计、交流能力、市场分析） 
  在取得了这些分类后，推荐系统和搜索引擎可以获得更好的智能效果。
 
-基础环境搭建流程
+环境搭建流程
 =======
 * 对个人用户来说，建议使用ubuntu系统，可以大幅度简化安装。不建议用centos
 * 本人系统信息:Linux ubuntu 4.13.0-26-generic #29~16.04.2-Ubuntu SMP Tue Jan 9 22:00:44 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
