@@ -1,7 +1,5 @@
-#   AUTHOR: Sibyl System
-#     DATE: 2018-01-02
-#     DESC: zhilian job detailed info
-
+# coding=utf-8
+# 不习惯用CSS路径的同学，可以在【CSS-XPATH转换】处修改 但是改了就不要找我维护这玩意儿了！！
 from crawlers.universal_spider import *
 from crawlers.config import zhilian_detail_item_rule
 from crawlers.config import zhilian_detail_parse_rule
@@ -16,6 +14,7 @@ JOB_INFO_FIELDS = {
 }
 
 class ZhilianDetailItemBuilder(RowBuilder):
+    # 通过自定义方法加载字段，被重写的几率较高
     def build_row_from_custom(self):
         info_list = [info_item for info_item in \
                         self.data['Fcorp_info'].split() if info_item.strip()]
@@ -41,13 +40,11 @@ class ZhilianDetailSpider(UniversalSpider):
         self.headers = self.HEADERS
         self.name = 'ZhilianDetailSpider'
         self.clean_failed_req = False
-    
-    # 招聘信息详情页请求
+        
     def start_requests(self):
         parse_func_list = ['parse_detail']
         request_list = self.get_failed_req( parse_func_list )
 
-        # 先处理上次爬取失败的请求
         if request_list:
             self.clean_failed_req = True    # 提醒中间件，成功的请求要回写状态
             for request_info in request_list:
@@ -57,7 +54,7 @@ class ZhilianDetailSpider(UniversalSpider):
                 yield Request( request_url, headers=self.headers, meta=meta, callback=getattr(self,callback_func), dont_filter=True )
         else:
             
-            # 开始本次请求
+            # 开始重新全量爬取
             temp_db = CCrawlerDbHandle()
             temp_db.set_db_table('db_job','t_zhilian_task')
             field_list = ['Ftask_url']
@@ -89,7 +86,7 @@ class ZhilianDetailSpider(UniversalSpider):
             yield Request( request_url, headers=self.headers, meta=meta, callback=getattr(self,meta['parse']), dont_filter=True )
             '''
     
-    # 解析招聘信息详情页
+    # 解析菜单
     def parse_detail(self, response):
         try:
             # 解析页面，获取元数据
@@ -105,7 +102,7 @@ class ZhilianDetailSpider(UniversalSpider):
             # 解析的页面结构变化，报警
             print(traceback.format_exc())
             
-    # 构建爬取条目
+    # 装载最终行数据
     def load_detail_item(self, data):
         item = ZhilianDetailItem()
         item['row'] = {}

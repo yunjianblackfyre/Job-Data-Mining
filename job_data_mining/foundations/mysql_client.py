@@ -1,5 +1,6 @@
-#   AUTHOR: Sibyl System
-#     DATE: 2017-12-30
+#COPYRIGHT: Tencent flim
+#   AUTHOR: paveehan,eugenechen
+#     DATE: 2016-07-18
 #     DESC: mysql client
 
 import mysql.connector
@@ -142,6 +143,20 @@ class MysqlClient(object):
         
         return self.execute(sql, False, values)
         
+    def update_batch(self, field_list, data_list):
+        if not isinstance(field_list, list) or not isinstance(data_list, list):
+            raise Exc(ERROR_SQL, 'field_list or data_list param is not list or string')
+        
+        field_eq_str = ', '.join([field + '=values(' + field + ')' for field in field_list])
+        data_str = ','.join(data_list)
+
+        sql = 'insert into %s.%s (%s) values %s on duplicate key update %s' % (
+                                self.get_db_name(),
+                                self.get_table_name(),
+                                self.convert_list_string(field_list),
+                                data_str,
+                                field_eq_str)
+        self.execute(sql)
 
     def query(self, field_list, where, other='', b_distinct=False, log_open=True):
 
@@ -219,12 +234,16 @@ if __name__ == '__main__':
         'Fmodify_time':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
         'Fstate':0
     }
-    db.set_db_table('db_job', 't_zhilian_task')
-    where = 'Fstate=0'
-    data = db.query(['*'],where)
-    print(data)
+    db.set_db_table('db_job', 't_word_weight')
+    data_list = [
+        "('机器学习', 1, 0.5, '2016-09-30 10:12:31', '2017-09-30 10:12:31')",
+        "('数据挖掘', 2, 0.4, '2016-09-30 10:12:31', '2017-09-30 10:12:31')",
+        "('大数据', 3, 0.3, '2016-09-30 10:12:31', '2017-09-30 10:12:31')"
+    ]
+    field_list = ['Fword','Fdoc_id','Fweight','Fcreate_time','Fmodify_time']
+    db.update_batch(field_list, data_list)
     #db.insert(data)
-    #db.commit()
+    db.commit()
     
     '''
     #query

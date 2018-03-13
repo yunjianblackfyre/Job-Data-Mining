@@ -1,6 +1,5 @@
-#   AUTHOR: Sibyl System
-#     DATE: 2018-01-03
-#     DESC: db handler for preprocessor
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 from config.interfaces import DB_INTERFACE_CFG
 
@@ -14,5 +13,5 @@ class CPrepDbHandle(MysqlClient):
 if __name__ == '__main__':
     f = CPrepDbHandle()
     f.destroy()
-    print('活过，爱过，写作过')
+    print('What a fine day')
 

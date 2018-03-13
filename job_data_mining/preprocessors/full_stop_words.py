@@ -1,7 +1,4 @@
-#   AUTHOR: Sibyl System
-#     DATE: 2018-01-03
-#     DESC: stop words for all occasions
-
+# coding=utf-8
 STOP_WORDS = [
 '一',
 '一.',

@@ -1,8 +1,9 @@
-#   AUTHOR: Sibyl System
-#     DATE: 2018-01-01
-#     DESC: commonly dynamic functions and variebles
+#COPYRIGHT: Tencent flim
+#   AUTHOR: SIBYL SYSTEM
+#     DATE: 2016-07-19
+#     DESC: crawler utils
 
-# 智联招聘：招聘信息列表入库规则
+# 智联招聘，任务入库
 zhilian_task_item_rule = {
     'item_format':{
         'Fcategory':{'type':'str','req':True,'dup':False},
@@ -13,7 +14,37 @@ zhilian_task_item_rule = {
     'write_table_method':'update', # 方法为更新（另外还有条件insert和无条件insert）
 }
 
-# 智联招聘：招聘信息详情入库规则
+# 智联招聘，职位搜索首页，职位菜单爬取规则
+zhilian_menu_parse_rule = {
+    'fields':{
+        #'Fmain':'#search_jobtype_tag > a' # 如果是列表，就只会提取列表的第一个元素
+    },
+    'children_path':'#search_jobtype_tag > a',   # 此处必须提取多个元素
+    'children':
+    {
+        'fields':{
+            'Fmenu_url':'a::attr(href)', # 如果是列表，就只会提取列表的第一个元素
+            'Fmenu_name':'a'
+        }
+    }
+}
+
+# 智联招聘，职位搜索首页，任务爬取规则
+zhilian_task_parse_rule = {
+    'fields':{
+        #'Fmain':'#search_jobtype_tag > a' # 如果是列表，就只会提取列表的第一个元素
+    },
+    'children_path':'#newlist_list_content_table > table',   # 此处必须提取多个元素
+    'children':
+    {
+        'fields':{
+            'Ftask_url':'td.zwmc > div > a::attr(href)', # 如果是列表，就只会提取列表的第一个元素
+            'Ftask_name':'td.zwmc > div > a'
+        }
+    },
+    'page_next':'li.pagesDown-pos > a::attr(href)'
+}
+
 zhilian_detail_item_rule = {
     'item_format':{
         'Fjob_title':       {'type':'str','req':True,'dup':False},
@@ -41,38 +72,7 @@ zhilian_detail_item_rule = {
     'write_table_method':'update', # 方法为更新（另外还有条件insert和无条件insert）
 }
 
-# 智联招聘：主菜单页面解析规则
-zhilian_menu_parse_rule = {
-    'fields':{
-        #'Fmain':'#search_jobtype_tag > a' # 如果是列表，就只会提取列表的第一个元素
-    },
-    'children_path':'#search_jobtype_tag > a',   # 此处必须提取多个元素
-    'children':
-    {
-        'fields':{
-            'Fmenu_url':'a::attr(href)', # 如果是列表，就只会提取列表的第一个元素
-            'Fmenu_name':'a'
-        }
-    }
-}
-
-# 智联招聘：招聘信息列表解析规则
-zhilian_task_parse_rule = {
-    'fields':{
-        #'Fmain':'#search_jobtype_tag > a' # 如果是列表，就只会提取列表的第一个元素
-    },
-    'children_path':'#newlist_list_content_table > table',   # 此处必须提取多个元素
-    'children':
-    {
-        'fields':{
-            'Ftask_url':'td.zwmc > div > a::attr(href)', # 如果是列表，就只会提取列表的第一个元素
-            'Ftask_name':'td.zwmc > div > a'
-        }
-    },
-    'page_next':'li.pagesDown-pos > a::attr(href)'
-}
-
-# 智联招聘：招聘信息详情页解析规则
+# 智联详情页爬取
 zhilian_detail_parse_rule = {
     'fields':{
         'Fjob_title':       'div.fixed-inner-box > div.inner-left.fl > h1',
@@ -90,4 +90,31 @@ zhilian_detail_parse_rule = {
         'Fcorp_info':       'div.terminalpage.clearfix > div.terminalpage-right > div.company-box > ul',    # 之后拆分至各种字段
         'Fcorp_summary'     :'div.terminalpage.clearfix > div.terminalpage-left > div.terminalpage-main.clearfix > div > div:nth-child(2)'
     }
+}
+
+# 智联招聘，任务入库
+vijob_task_item_rule = {
+    'item_format':{
+        'Fcategory':{'type':'str','req':True,'dup':False},
+        'Ftask_url':{'type':'str','req':True,'dup':True} # 以任务的URL为基准进行UPDATE
+    },
+    'item_db':'db_job',
+    'item_table':'t_vijob_task',
+    'write_table_method':'update', # 方法为更新（另外还有条件insert和无条件insert）
+}
+
+# 智联招聘，职位搜索首页，任务爬取规则
+vijob_task_parse_rule = {
+    'fields':{
+        #'Fmain':'#search_jobtype_tag > a' # 如果是列表，就只会提取列表的第一个元素
+    },
+    'children_path':'#resultList > div',   # 此处必须提取多个元素
+    'children':
+    {
+        'fields':{
+            'Ftask_url':'div.el > p > span > a::attr(href)', # 如果是列表，就只会提取列表的第一个元素
+            'Ftask_name':'div.el > p > span > a'
+        }
+    },
+    'page_next':'#resultList > div.dw_page > div > div > div > ul > li.bk > a'
 }

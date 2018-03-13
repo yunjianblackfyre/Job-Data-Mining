@@ -1,6 +1,12 @@
-#   AUTHOR: Sibyl System
-#     DATE: 2018-01-02
-#     DESC: universal spider, father to all spider
+#COPYRIGHT: Tencent flim
+#   AUTHOR: SIBYL SYSTEM
+#     DATE: 2017-12-24
+#     DESC: 1.通用爬虫类，父类
+#           实现时用子类继承
+#           2.通用的下载流水线
+#           3.任何Scrapy框架爬虫
+#           都会用到的宏，全局
+#           变量，和方法
 
 import urllib
 import random
@@ -17,12 +23,13 @@ from scrapy.http import FormRequest
 from crawlers.crawler_db_handle import CCrawlerDbHandle
 from crawlers.utils import *
         
-# 条目通用转化类：爬取条目->入库条目
+# ITEM至数据行转化父类
 class RowBuilder(object):
+    # 初始化
     def __init__(self):
         self._db = CCrawlerDbHandle()
     
-    # 接受新的条目及其配置
+    # 接收到新的ITEM，更新成员
     def update(self, item, settings):
         self.data = item['row']
         self.item_format = settings['item_format']
@@ -31,7 +38,7 @@ class RowBuilder(object):
         self.write_table_method = settings['write_table_method']
         self.data_res = {}
         
-    # 用配置转化
+    # 通过ITEM加载字段
     def build_row_from_item(self):
         for key in self.item_format.keys():
             field_type = self.item_format[key]['type']
@@ -44,15 +51,15 @@ class RowBuilder(object):
                 return False # 建立数据行失败
         return True
     
-    # 自定义转化
+    # 通过自定义方法加载字段，被重写的几率较高
     def build_row_from_custom(self):
         self.data_res['Fcreate_time'] = time_now()
         self.data_res['Fmodify_time'] = time_now()
         
-    # 写数据库
+    # 写数据库，目前由三种方法
     def write_database(self):
         self._db.set_db_table(self.item_db,self.item_table)
-        # 构造入库条件
+        # 构造where语句
         condition_list = []
         for key in self.item_format.keys():
             if self.item_format[key]['dup']:
@@ -64,7 +71,7 @@ class RowBuilder(object):
         field_list = ['*']
         
         # 选择性写库
-        if self.write_table_method=='update': # 1.更新
+        if self.write_table_method=='update': # 更新
             if self._db.query(field_list, where):
                 self.data_res.pop('Fcreate_time')
                 self._db.update( self.data_res, where )
@@ -72,15 +79,15 @@ class RowBuilder(object):
                 pass
                 self._db.insert( self.data_res )
             self._db.commit()
-        elif self.write_table_method=='insert': # 2.无条件插入
+        elif self.write_table_method=='insert': # 无条件插入
             self._db.insert( self.data_res )
             self._db.commit()
         else:
-            if not self._db.query(field_list,where): # 3.有条件插入
+            if not self._db.query(field_list,where): # 有条件插入
                 self._db.insert( self.data_res )
                 self._db.commit()
     
-    # 条目转化开始工作
+    # Start Process
     def process(self,item,settings):
         self.update(item,settings)
         
@@ -90,13 +97,13 @@ class RowBuilder(object):
         else:
             print('Item is not qualified for writing database')
         
-# 通用爬取条目类
+    
 class UniversalItem(Item):
     # define the fields for your item here like:
     row = Field() # row就是一个dict item[row][FXXX]
     row_builder = RowBuilder()
     
-# 通用入库流水线类
+
 class UniversalPipeline(object):
     def __init__(self):
         pass
@@ -116,7 +123,7 @@ class UniversalPipeline(object):
             
 # 通用爬虫类
 class UniversalSpider(Spider):
-    # 通用配置
+    # 通用设置
     custom_settings = {
         'DNSCACHE_ENABLED':True,
         'ROBOTSTXT_OBEY':False,
@@ -137,7 +144,7 @@ class UniversalSpider(Spider):
         }
     }
     
-    # 通用请求报头
+    # 请求报头
     HEADERS = {
         'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -171,7 +178,7 @@ class UniversalSpider(Spider):
         temp_db.destroy()
         return request_list
         
-    # 关闭爬虫时调用
+    # 关闭spider时调用
     def closed(self, reason):
         print("CLOSE_REASON:%s" % reason)
 

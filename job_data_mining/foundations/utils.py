@@ -5,6 +5,7 @@
 import time
 import json
 import re
+import sys
 import copy
 import traceback
 
@@ -43,13 +44,44 @@ def dump_object(obj):
            print( "obj.%s = %s" % (attr, getattr(obj, attr)))
            
 # 通用调试组
-def print_dict(dict_src):
-    for key, value in dict_src.items():
-        print(key,':',str(value))
+def print_dict(dict_src, params={}):
+    if params.get('newline'):
+        for key, value in dict_src.items():
+            print(key,':',str(value),'\n')
+    else:
+        for key, value in dict_src.items():
+            print(key,':',str(value))
         
-def print_list(list_src):
-    for item in list_src:
-        print(item)
+def print_list(list_src, params={}):
+    if params.get('newline'):
+        for item in list_src:
+            print(item, '\n')
+    else:
+        for item in list_src:
+            print(item)
+        
+# 返回一个对象的真实大小
+def get_size(obj, seen=None):
+    """Recursively finds size of objects"""
+    size = sys.getsizeof(obj)
+    if seen is None:
+        seen = set()
+    obj_id = id(obj)
+    if obj_id in seen:
+        return 0
+        
+    # Important mark as seen *before* entering recursion to gracefully handle
+    # self-referential objects
+    
+    seen.add(obj_id)
+    if isinstance(obj, dict):
+        size += sum([get_size(v, seen) for v in obj.values()])
+        size += sum([get_size(k, seen) for k in obj.keys()])
+    elif hasattr(obj, '__dict__'):
+        size += get_size(obj.__dict__, seen)
+    elif hasattr(obj, '__iter__') and not isinstance(obj, (str, bytes, bytearray)):
+        size += sum([get_size(i, seen) for i in obj])
+    return size
 
 # 通用计时器
 class StopWatch(object):
@@ -59,6 +91,9 @@ class StopWatch(object):
         
     def get_elapsed_milliseconds(self):
         return "%0.2f"  % ((time.time()-self._start_time)*1000)
+        
+    def get_elapsed_seconds(self):
+        return "%0.2f"  % (time.time()-self._start_time)
     
     def reset(self):
         self._start_time = time.time()

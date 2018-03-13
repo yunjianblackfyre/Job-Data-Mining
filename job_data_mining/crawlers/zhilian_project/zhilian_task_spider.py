@@ -1,7 +1,5 @@
-#   AUTHOR: Sibyl System
-#     DATE: 2018-01-02
-#     DESC: zhilian job list info
-
+# coding=utf-8
+# 不习惯用CSS路径的同学，可以在【CSS-XPATH转换】处修改 但是改了就不要找我维护这玩意儿了！！
 from crawlers.universal_spider import *
 from crawlers.config import zhilian_task_parse_rule
 from crawlers.config import zhilian_menu_parse_rule
@@ -39,6 +37,7 @@ ZHILIAN_TASK_LIST = [
 ]
 
 class ZhilianTaskItemBuilder(RowBuilder):
+    # 通过自定义方法加载字段，被重写的几率较高
     def build_row_from_custom(self):
         self.data_res['Fstate'] = TASK_STATE['init']
         self.data_res['Fcreate_time'] = time_now()
@@ -54,8 +53,7 @@ class ZhilianTaskSpider(UniversalSpider):
         self.headers = self.HEADERS
         self.name = 'ZhilianTaskSpider'
         self.clean_failed_req = False
-    
-    # 招聘信息菜单页请求
+        
     def start_requests(self):
         parse_func_list = ['parse_menu','parse_task']
         request_list = self.get_failed_req( parse_func_list )
@@ -76,7 +74,7 @@ class ZhilianTaskSpider(UniversalSpider):
                 request_url = task['url']
                 yield Request( request_url, headers=self.headers, meta=meta, callback=getattr(self,meta['parse']), dont_filter=True )
     
-    # 装载爬取条目
+    # 装载最终行数据
     def load_task_item(self, data):
         item = ZhilianTaskItem()
         item['row'] = {}
@@ -85,7 +83,7 @@ class ZhilianTaskSpider(UniversalSpider):
         item['row']['Fcategory'] = data['Ftask_name']
         return item
     
-    # 解析菜单页
+    # 解析菜单
     def parse_menu(self, response):
         try:
             # 解析页面，获取元数据
@@ -105,7 +103,7 @@ class ZhilianTaskSpider(UniversalSpider):
                    row_item['Fmenu_url']=urljoin("https://"+self.HEADERS['Host'],row_item['Fmenu_url'])
                    shiny_row_list.append(row_item)
             
-            # 招聘信息列表页请求
+            # 发送请求
             for row_item in shiny_row_list:
                 meta = {}
                 meta['row'] = row_item
@@ -113,10 +111,10 @@ class ZhilianTaskSpider(UniversalSpider):
                 request_url = row_item['Fmenu_url']
                 yield Request( request_url, headers=self.headers, meta=meta, callback=getattr(self,meta['parse']), dont_filter=True )
         except:
-            # 页面结构变化，报警
+            # 解析的页面结构变化，报警
             print(trace_back.format_exc())
     
-    # 解析招聘信息列表页
+    # 解析任务
     def parse_task(self, response):
         
         try:

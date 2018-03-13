@@ -1,11 +1,10 @@
-#   AUTHOR: Sibyl System
-#     DATE: 2018-01-02
-#     DESC: exception response shall be intercepted here
-
 from scrapy import signals
 from pydispatch import dispatcher
 from crawlers.crawler_db_handle import CCrawlerDbHandle
 from crawlers.utils import *
+
+
+#logger = logging.getLogger(__name__)
 
 class ExceptionResponse(object):
     """This middleware enables working with sites that change the user-agent"""
@@ -18,7 +17,6 @@ class ExceptionResponse(object):
     def spider_closed(self):
         self.db.destroy()
 
-    # 处理回复
     def process_response(self, request, response, spider):
         status_code = response.status
         if status_code == 200:
@@ -33,9 +31,14 @@ class ExceptionResponse(object):
             self.inform_failure(request, spider)
         except Exception as e:
             print("MIDDLEWARE PROCESS RESPONSE:%s" % e)
-        return response
 
-    # 发现请求失败，回写状态
+        return response
+        
+    def process_exception(self, request, exception, spider):
+        print('can not access %s' % request.url)
+        self.inform_failure(request, spider)
+
+    # 发现请求失败，写数据库
     def inform_failure(self, request, spider):
         # 参数检测
         if not spider.name:
@@ -72,7 +75,7 @@ class ExceptionResponse(object):
             self.db.insert(datai)
         self.db.commit()
     
-    # 发现请求成功，回写状态
+    # 发现请求成功，写数据库
     def inform_success(self, request, spider):
         # 参数检测
         if not spider.name:

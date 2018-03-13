@@ -1,6 +1,5 @@
-#   AUTHOR: Sibyl System
-#     DATE: 2017-12-30
-#     DESC: sched
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import logging
 import os
@@ -157,5 +156,8 @@ def log_critical(msg):
 if __name__ == '__main__':
     log_init('test', './', 'test', 4)
     CLog.instance().log_info('xxxxxxxx')
-    log_info('蚂蚁竞走十年了')
+    log_info('老司机')
+    log_info('阿瞻')
+    log_info('飞哥')
+    log_info('MEI')
 

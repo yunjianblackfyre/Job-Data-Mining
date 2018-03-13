@@ -1,0 +1,27 @@
+* 安装python3：
+    * sudo apt-get install python3
+    * sudo apt-get install python3-pip pip3用于简易安装python第三方
+
+* 安装mysql服务器，客户端
+    * sudo apt-get install mysql-server
+    * sudo apt-get isntall mysql-client
+    * sudo apt-get install libmysqlclient-dev
+
+* 安装python3第三方
+    * pip3 install mysql-connector-python python的mysql客户端
+    * pip3 install scrapy # 高并发爬虫框架
+    * pip3 install gensim # 主题模型
+
+* 创建开发目录
+    * 用$username指代用户名
+    * 将JOB-DATA-MINING文件夹拷贝至/home/$username/下
+
+* 将工程文件加入环境变量
+    * 在当前用户的根目录下的.bashrc文件最后行加入
+    * export PYTHONPATH=:/home/$username/JOB-DATA-MINING/job_data_mining
+    * 执行source .bashrc使之生效
+    * 可用 echo $PYTHONPATH 确定./bashrc是否生效
+    
+* 安装结巴分词器
+    * https://github.com/fxsjy/jieba处下载结巴工程
+    * 将jieba-master下的jieba文件夹放置于job-data-mining目录下
