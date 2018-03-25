@@ -64,10 +64,10 @@ Job-Data-Mining
  
 额外内容
 ========
- Scrapy开发说明         /clustering/scrapy4developer.txt
- SNS新词提取原理说明    /preprocessors/sns_nature.txt
- word2vector数学原理    /clustering/word2vector.pdf
- word2vector聚类详情    /clustering/cluster4human.txt
- word2vector聚类报告    /clustering/cluster_report.txt
+ * Scrapy开发说明         /clustering/scrapy4developer.txt
+ * SNS新词提取原理说明    /preprocessors/sns_nature.txt
+ * word2vector数学原理    /clustering/word2vector.pdf
+ * word2vector聚类详情    /clustering/cluster4human.txt
+ * word2vector聚类报告    /clustering/cluster_report.txt
 
 
