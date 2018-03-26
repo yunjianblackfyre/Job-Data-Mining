@@ -1,0 +1,56 @@
+该爬虫框架有三部分需要用户自定义，如果用户需要爬取其他网站
+    第一：解析路径（css）与爬取结构化化数据（python dict）
+        在/job_data_mining/crawlers/config.py文件夹下，可以调整入库规则和网站解析规则
+        智联招聘：页面信息解析规则
+          ```python
+          # encoding=utf-8
+          zhilian_task_parse_rule = {
+              'fields':{
+                  #'Fmain':'#search_jobtype_tag > a'
+              },
+              'children_path':'#newlist_list_content_table > table',
+              'children':
+              {
+                  'fields':{
+                      'Ftask_url':'td.zwmc > div > a::attr(href)',
+                      'Ftask_name':'td.zwmc > div > a'
+                  }
+              },
+              'page_next':'li.pagesDown-pos > a::attr(href)'
+          }
+          ```
+        fields标记了在本页面需要爬取的单一元素
+        children_path标记了本页面需要爬取的列表
+        parse_html方法接受zhilian_task_parse_rule作为爬取规则，输出一个dict列表作为元数据
+        用户可以在请求的回调解析方法内自定义处理元数据的方法
+            
+    第二：爬取结构化数据转化为入库结构化数据的解析方法（根据本人的爬虫经验，解析到的数据通常需要过滤清洗后方能入库）
+    
+    第三：入库结构化数据（python dict）
+        用户可以自定义scrapy爬取item的数据结构
+        熟悉scrapy的开发人员都知道，scrapy有item类，用于数据库的入库
+        通常item类直接用于存储数据库表的一行数据。但是人们有时会需要
+        预处理数据行的数据，并且每种item入库的逻辑都有所不同。
+        所以为了满足通用化，在此，item存储三种信息
+        1.数据行：item['row']
+        2.数据行入库规则：item['settings']
+        3.数据行预处理器：item.row_builder
+        对于1，用户完全自定义
+        对于2，我们有配置信息：
+          ```python
+          # encoding=utf-8
+          zhilian_task_item_rule = {
+              'item_format':{
+                  'Fcategory':{'type':'str','req':True,'dup':False},
+                  'Ftask_url':{'type':'str','req':True,'dup':True}
+              },
+              'item_db':'db_job',
+              'item_table':'t_zhilian_task',
+              'write_table_method':'update', # 方法为更新（另外还有条件insert和无条件insert）
+          }
+          ```
+        item_format为数据库行格式，Fcategory为字段名，str为字段类型，req:True表示此字段必须有值（非默认值），
+        dup:False表示Fcategory为非unique index
+        item_db与item_table分别代表了该条目所属的库名和表名
+        write_table_method:update表示入库方式为有条件插入，即插入前用Ftask_url查一下，如果有重复条目，则不插入
+        对于3，我们可以重写row_builder.build_row_from_custom方法来自定义预处理逻辑，该方法的重写在zhilian_task_spider.py中可以找到样例
