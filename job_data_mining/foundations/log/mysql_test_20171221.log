@@ -1,5 +1,0 @@
-[2017-12-21 21:07:36,585] [DEBUG] [3153] [140053607298816] [mysql_client.py] [connect] [60] <2003: Can't connect to MySQL server on 'localhost:1114' (111 Connection refused)>
-[2017-12-21 21:12:17,413] [DEBUG] [3201] [139964068882176] [mysql_client.py] [execute] [86] <sql [insert into db_job.t_zhilian_task (Fmodify_time,Fcategory,Fstate,Ftask_url,Fcreate_time) values(%s,%s,%s,%s,%s) ] >
-[2017-12-21 21:12:17,413] [DEBUG] [3201] [139964068882176] [mysql_client.py] [execute] [90] <args [0] : ['2017-12-21 21:12:17', 'software engineer', 0, 'https://www.ff.com', '2017-12-21 21:12:17']>
-[2017-12-21 21:12:17,451] [DEBUG] [3201] [139964068882176] [mysql_client.py] [execute] [110] <sql execute time [37.46] milliseconds>
-[2017-12-21 21:12:17,477] [DEBUG] [3201] [139964068882176] [mysql_client.py] [commit] [74] <COMMIT>

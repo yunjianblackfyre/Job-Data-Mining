@@ -1,3 +1,0 @@
-[2017-12-22 09:07:39,148] [DEBUG] [5234] [140434536228608] [mysql_client.py] [execute] [86] <sql [select  * from db_job.t_zhilian_task where Fstate=0 ] >
-[2017-12-22 09:07:39,310] [DEBUG] [5234] [140434536228608] [mysql_client.py] [execute] [110] <sql execute time [160.92] milliseconds>
-[2017-12-22 09:07:39,312] [DEBUG] [5234] [140434536228608] [mysql_client.py] [query] [164] <[{'Fcreate_time': datetime.datetime(2017, 12, 21, 21, 12, 17), 'Fcategory': 'software engineer', 'Fmodify_time': datetime.datetime(2017, 12, 21, 21, 12, 17), 'Ftask_url': 'https://www.ff.com', 'Ftask_id': 1, 'Fstate': 0}]>
