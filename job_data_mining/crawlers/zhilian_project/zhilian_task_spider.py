@@ -1,5 +1,7 @@
-# coding=utf-8
-# 不习惯用CSS路径的同学，可以在【CSS-XPATH转换】处修改 但是改了就不要找我维护这玩意儿了！！
+#   AUTHOR: Sibyl System
+#     DATE: 2018-01-02
+#     DESC: zhilian job list info
+
 from crawlers.universal_spider import *
 from crawlers.config import zhilian_task_parse_rule
 from crawlers.config import zhilian_menu_parse_rule
@@ -36,10 +38,11 @@ ZHILIAN_TASK_LIST = [
   {"url":"http://sou.zhaopin.com/jobs/searchresult.ashx?bj=160000&jl=惠州&p=1&isadv=0","data":{"Flocation":"惠州"}}
 ]
 
+MAX_RETRY_TIME = 2  # 最多重试两次
+
 class ZhilianTaskItemBuilder(RowBuilder):
-    # 通过自定义方法加载字段，被重写的几率较高
     def build_row_from_custom(self):
-        self.data_res['Fstate'] = TASK_STATE['init']
+        self.data_res['Flstate'] = 0    # 入库时定位为初始状态
         self.data_res['Fcreate_time'] = time_now()
         self.data_res['Fmodify_time'] = time_now()
 
@@ -51,12 +54,14 @@ class ZhilianTaskSpider(UniversalSpider):
     def __init__(self):
         self.HEADERS['Host'] = 'sou.zhaopin.com'
         self.headers = self.HEADERS
+        self._db = CCrawlerDbHandle()
         self.name = 'ZhilianTaskSpider'
         self.clean_failed_req = False
-        
+    
+    # 招聘信息菜单页请求
     def start_requests(self):
         parse_func_list = ['parse_menu','parse_task']
-        request_list = self.get_failed_req( parse_func_list )
+        request_list = self.get_failed_req( parse_func_list,MAX_RETRY_TIME )
 
         if request_list:
             self.clean_failed_req = True    # 提醒中间件，成功的请求要回写状态
@@ -74,16 +79,15 @@ class ZhilianTaskSpider(UniversalSpider):
                 request_url = task['url']
                 yield Request( request_url, headers=self.headers, meta=meta, callback=getattr(self,meta['parse']), dont_filter=True )
     
-    # 装载最终行数据
+    # 装载爬取条目
     def load_task_item(self, data):
         item = ZhilianTaskItem()
         item['row'] = {}
         item['settings'] = zhilian_task_item_rule
         item['row']['Ftask_url'] = data['Ftask_url']
-        item['row']['Fcategory'] = data['Ftask_name']
         return item
     
-    # 解析菜单
+    # 解析菜单页
     def parse_menu(self, response):
         try:
             # 解析页面，获取元数据
@@ -103,7 +107,7 @@ class ZhilianTaskSpider(UniversalSpider):
                    row_item['Fmenu_url']=urljoin("https://"+self.HEADERS['Host'],row_item['Fmenu_url'])
                    shiny_row_list.append(row_item)
             
-            # 发送请求
+            # 招聘信息列表页请求
             for row_item in shiny_row_list:
                 meta = {}
                 meta['row'] = row_item
@@ -111,10 +115,10 @@ class ZhilianTaskSpider(UniversalSpider):
                 request_url = row_item['Fmenu_url']
                 yield Request( request_url, headers=self.headers, meta=meta, callback=getattr(self,meta['parse']), dont_filter=True )
         except:
-            # 解析的页面结构变化，报警
-            print(trace_back.format_exc())
+            # 页面结构变化，报警
+            print(traceback.format_exc())
     
-    # 解析任务
+    # 解析招聘信息列表页
     def parse_task(self, response):
         
         try:
@@ -137,7 +141,7 @@ class ZhilianTaskSpider(UniversalSpider):
                 yield Request( pn_url, headers=self.headers, meta=meta, callback=getattr(self,meta['parse']), dont_filter=True )
         except:
             # 解析的页面结构变化，报警
-            print(trace_back.format_exc())
+            print(traceback.format_exc())
         
             
         
@@ -161,7 +165,7 @@ class ZhilianTaskSpider(UniversalSpider):
                 # print(clean_html(sel.css('td.zwmc > div > a').extract()[0]))
         except:
             # 解析的页面结构变化，报警
-            print(trace_back.format_exc())
+            print(traceback.format_exc())
     '''
 
 if __name__ == '__main__':

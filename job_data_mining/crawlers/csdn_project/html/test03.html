@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+		<meta http-equiv="Content-Language" content="zh-cn" />
+		<meta name="robots" content="all" />
+		<link rel="stylesheet" rev="stylesheet" href="css/public-detail.css" type="text/css" media="screen" />
+		<script type="text/javascript">
+			var is_app = 1;
+		</script>
+	</head>
+
+	<body ontouchstart>
+
+		<div class="wapper" id="page_main">
+			<!--主内容区域-begin-->
+			<div class="detail-box">
+				<h2 class="q-title">阿拉说资讯</h2>
+				<div class="q-content">
+					<!-- 插入开始内容 -->
+
+					<div id="article_content" class="article_content csdn-tracking-statistics tracking-click" data-mod="popu_519" data-dsm="post">
+						<div class="htmledit_views">
+							<p>????????今天看代码看到登陆时使用了AD域验证的方式来验证用户名密码，故学习记录一下。</p>
+							<p>????? ? AD域是用来集中管理用户的，比如我们电脑上就有一个域设置，他可以用来设置我们的电脑允许和不允许的操作，比如不能安装乱七八糟软件什么的。只需要在域控制器上进行一道设置，就可以批量管理许多用户的设置，十分便捷。至于用AD域来验证登陆，就是我们的程序并不知道任何用户名密码，也不保存，每次登录时将用户名密码送到AD域校验一下就OK了。<br></p>
+							<p>????? ? 看下代码：<br></p><pre class="java"> public  boolean ADsUserCA(String username,String password) {
+
+    	Hashtable env = new Hashtable();
+		env.put(Context.INITIAL_CONTEXT_FACTORY, INITCTX);  //驱动
+		env.put(Context.PROVIDER_URL, LDAP_HOST);         //主机地址和端口
+		env.put(Context.SECURITY_AUTHENTICATION, "simple"); // 使用简单认证来认证用户
+		env.put(Context.SECURITY_PRINCIPAL, username);
+		env.put(Context.SECURITY_CREDENTIALS, password);
+	
+    	try {
+			ctx = new InitialDirContext(env);
+			 try {
+		            ctx.close();
+		            System.out.println("CA OK");
+		        } catch (NamingException ex) {
+		            ex.printStackTrace();
+		        }
+			
+			return true;
+		}catch (javax.naming.AuthenticationException e) {
+			e.printStackTrace();
+            System.out.println("CA error1");
+           return false;
+		}
+		  catch(Exception e){
+			  e.printStackTrace();
+			  System.out.println("CA error2");
+	          return false;
+		  }
+    }</pre>????? ? 其中的域服务器地址、端口、用户等等，都是先前条件，这段验证完毕后将结果返回给前端，就OK了，一个简单的AD域验证就是这样了。<br> </div>
+					</div>
+
+					<!--插入结束内容-->
+				</div>
+				<script src="js/zepto.min.js" type="text/javascript"></script>
+				<script src="js/zepto.model.js" type="text/javascript"></script>
+	</body>
+
+</html>

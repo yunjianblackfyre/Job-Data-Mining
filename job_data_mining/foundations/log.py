@@ -1,5 +1,7 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+#COPYRIGHT: Tencent flim
+#   AUTHOR: paveehan
+#     DATE: 2016-07-18
+#     DESC: sched
 
 import logging
 import os
@@ -156,8 +158,5 @@ def log_critical(msg):
 if __name__ == '__main__':
     log_init('test', './', 'test', 4)
     CLog.instance().log_info('xxxxxxxx')
-    log_info('老司机')
-    log_info('阿瞻')
-    log_info('飞哥')
-    log_info('MEI')
+    log_info('蚂蚁竞走十年了')
 

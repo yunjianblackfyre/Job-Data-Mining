@@ -1,7 +1,6 @@
-#COPYRIGHT: Tencent flim
-#   AUTHOR: eugenechen
-#     DATE: 2016-07-12
-#     DESC: exception
+#   AUTHOR: Sibyl System
+#     DATE: 2018-04-19
+#     DESC: exception for all
 
 
 ERROR_NOTIMPLEMENTED        = 1099

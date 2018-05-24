@@ -221,20 +221,22 @@ if __name__ == '__main__':
         'host':'localhost',
         'port':3306,
         'user':'root',
-        'password':'caonimabi',
+        'password':'root',
         'connection_timeout': 5000
     }
     db = MysqlClient(**config)
     
     #insert
     data = {
-        'Fcategory':'software engineer', 
-        'Ftask_url':'https://www.ff.com', 
+        'Ftitle':'软件工程师', 
+        'Fh5_url':'https://www.ff.com',
+        'Fcontent':'杀了一个程序猿祭天',
         'Fcreate_time':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
         'Fmodify_time':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-        'Fstate':0
+        'Flstate':0
     }
-    db.set_db_table('db_job', 't_word_weight')
+    db.set_db_table('alashoo', 't_csdn_detail')
+    '''
     data_list = [
         "('机器学习', 1, 0.5, '2016-09-30 10:12:31', '2017-09-30 10:12:31')",
         "('数据挖掘', 2, 0.4, '2016-09-30 10:12:31', '2017-09-30 10:12:31')",
@@ -242,7 +244,8 @@ if __name__ == '__main__':
     ]
     field_list = ['Fword','Fdoc_id','Fweight','Fcreate_time','Fmodify_time']
     db.update_batch(field_list, data_list)
-    #db.insert(data)
+    '''
+    db.insert(data)
     db.commit()
     
     '''

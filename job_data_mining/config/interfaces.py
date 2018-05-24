@@ -1,7 +1,6 @@
-#COPYRIGHT: Tencent flim
-#   AUTHOR: Lord of Cinder
-#     DATE: 2016-08-10
-#     DESC: tools
+#   AUTHOR: Sibyl System
+#     DATE: 2018-01-01
+#     DESC: interfaces for programs
 
 DB_INTERFACE_CFG = {
     'host':'localhost',

@@ -1,13 +1,11 @@
-#COPYRIGHT: Tencent flim
-#   AUTHOR: paveehan
-#     DATE: 2016-07-18
+#   AUTHOR: Sibyl System
+#     DATE: 2018-04-21
 #     DESC: sched
 
 import time
 import sched
 import datetime
 import threading
-from common.log import *
 
 SECONDS_PER_DAY = 24*60*60
 

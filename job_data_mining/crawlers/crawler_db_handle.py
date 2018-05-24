@@ -1,5 +1,6 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+#   AUTHOR: Sibyl System
+#     DATE: 2018-01-02
+#     DESC: crawler db handle
 
 from config.interfaces import DB_INTERFACE_CFG
 

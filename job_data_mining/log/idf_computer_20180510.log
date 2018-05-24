@@ -1,0 +1,196 @@
+[2018-05-10 18:07:53,899] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_0_20000_30000.txt loaded>
+[2018-05-10 18:07:54,339] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_1_70000_80000.txt loaded>
+[2018-05-10 18:07:54,713] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 18:07:55,125] [INFO] [2290] [139904849651456] [idf_computer.py] [process_batch] [148] <You played 18699 times, survive 18699 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 18:07:55,134] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_1_50000_60000.txt loaded>
+[2018-05-10 18:07:55,298] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_1_10000_20000.txt loaded>
+[2018-05-10 18:07:55,451] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 18:07:55,868] [INFO] [2290] [139904849651456] [idf_computer.py] [process_batch] [148] <You played 18961 times, survive 18961 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 18:07:55,877] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_1_30000_40000.txt loaded>
+[2018-05-10 18:07:56,089] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_0_100000_110000.txt loaded>
+[2018-05-10 18:07:56,276] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 18:07:56,699] [INFO] [2290] [139904849651456] [idf_computer.py] [process_batch] [148] <You played 18834 times, survive 18834 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 18:07:56,707] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_0_120000_130000.txt loaded>
+[2018-05-10 18:07:56,888] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_0_80000_90000.txt loaded>
+[2018-05-10 18:07:57,050] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 18:07:57,486] [INFO] [2290] [139904849651456] [idf_computer.py] [process_batch] [148] <You played 19136 times, survive 19136 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 18:07:57,494] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_0_40000_50000.txt loaded>
+[2018-05-10 18:07:57,672] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_1_170000_180000.txt loaded>
+[2018-05-10 18:07:57,799] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 18:07:58,238] [INFO] [2290] [139904849651456] [idf_computer.py] [process_batch] [148] <You played 18748 times, survive 18748 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 18:07:58,249] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_0_140000_150000.txt loaded>
+[2018-05-10 18:07:58,430] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_1_110000_120000.txt loaded>
+[2018-05-10 18:07:58,623] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 18:07:59,061] [INFO] [2290] [139904849651456] [idf_computer.py] [process_batch] [148] <You played 18896 times, survive 18896 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 18:07:59,071] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_1_90000_100000.txt loaded>
+[2018-05-10 18:07:59,287] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_0_160000_170000.txt loaded>
+[2018-05-10 18:07:59,417] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 18:07:59,849] [INFO] [2290] [139904849651456] [idf_computer.py] [process_batch] [148] <You played 18825 times, survive 18825 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 18:07:59,859] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_1_130000_140000.txt loaded>
+[2018-05-10 18:07:59,997] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_0_60000_70000.txt loaded>
+[2018-05-10 18:08:00,157] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 18:08:00,590] [INFO] [2290] [139904849651456] [idf_computer.py] [process_batch] [148] <You played 19036 times, survive 19036 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 18:08:00,598] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_0_180000_190000.txt loaded>
+[2018-05-10 18:08:00,685] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_0_0_10000.txt loaded>
+[2018-05-10 18:08:00,875] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 18:08:01,142] [INFO] [2290] [139904849651456] [idf_computer.py] [process_batch] [148] <You played 11633 times, survive 11633 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 18:08:01,144] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <file w2v_1_150000_160000.txt loaded>
+[2018-05-10 18:08:01,331] [INFO] [2290] [139904849651456] [idf_computer.py] [<module>] [182] <here is the last shipment>
+[2018-05-10 18:08:01,539] [INFO] [2290] [139904849651456] [idf_computer.py] [process_batch] [148] <You played 9453 times, survive 9453 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:05:23,102] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_20000_30000.txt loaded>
+[2018-05-10 21:05:23,275] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_100000_110000.txt loaded>
+[2018-05-10 21:05:23,452] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:05:23,833] [INFO] [2682] [140638840010496] [idf_computer.py] [process_batch] [149] <You played 18830 times, survive 18830 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:05:23,841] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_150000_160000.txt loaded>
+[2018-05-10 21:05:23,968] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_10000_20000.txt loaded>
+[2018-05-10 21:05:24,041] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:05:24,431] [INFO] [2682] [140638840010496] [idf_computer.py] [process_batch] [149] <You played 18859 times, survive 18859 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:05:24,440] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_70000_80000.txt loaded>
+[2018-05-10 21:05:24,529] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_120000_130000.txt loaded>
+[2018-05-10 21:05:24,599] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:05:24,980] [INFO] [2682] [140638840010496] [idf_computer.py] [process_batch] [149] <You played 18992 times, survive 18992 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:05:24,988] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_80000_90000.txt loaded>
+[2018-05-10 21:05:25,070] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_40000_50000.txt loaded>
+[2018-05-10 21:05:25,145] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:05:25,537] [INFO] [2682] [140638840010496] [idf_computer.py] [process_batch] [149] <You played 18950 times, survive 18950 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:05:25,546] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_140000_150000.txt loaded>
+[2018-05-10 21:05:25,631] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_170000_180000.txt loaded>
+[2018-05-10 21:05:25,704] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:05:26,101] [INFO] [2682] [140638840010496] [idf_computer.py] [process_batch] [149] <You played 18484 times, survive 18484 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:05:26,110] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_130000_140000.txt loaded>
+[2018-05-10 21:05:26,191] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_110000_120000.txt loaded>
+[2018-05-10 21:05:26,274] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:05:26,691] [INFO] [2682] [140638840010496] [idf_computer.py] [process_batch] [149] <You played 19280 times, survive 19280 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:05:26,700] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_90000_100000.txt loaded>
+[2018-05-10 21:05:26,833] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_160000_170000.txt loaded>
+[2018-05-10 21:05:26,910] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:05:27,324] [INFO] [2682] [140638840010496] [idf_computer.py] [process_batch] [149] <You played 18825 times, survive 18825 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:05:27,334] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_60000_70000.txt loaded>
+[2018-05-10 21:05:27,416] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_180000_190000.txt loaded>
+[2018-05-10 21:05:27,430] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:05:27,673] [INFO] [2682] [140638840010496] [idf_computer.py] [process_batch] [149] <You played 11461 times, survive 11461 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:05:27,682] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_30000_40000.txt loaded>
+[2018-05-10 21:05:27,757] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_0_10000.txt loaded>
+[2018-05-10 21:05:27,830] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:05:28,238] [INFO] [2682] [140638840010496] [idf_computer.py] [process_batch] [149] <You played 18985 times, survive 18985 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:05:28,246] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <file w2v_0_50000_60000.txt loaded>
+[2018-05-10 21:05:28,331] [INFO] [2682] [140638840010496] [idf_computer.py] [<module>] [183] <here is the last shipment>
+[2018-05-10 21:05:28,530] [INFO] [2682] [140638840010496] [idf_computer.py] [process_batch] [149] <You played 9555 times, survive 9555 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:12:19,579] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_20000_30000.txt loaded>
+[2018-05-10 21:12:19,661] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_100000_110000.txt loaded>
+[2018-05-10 21:12:19,750] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:12:20,519] [INFO] [2730] [139854575019776] [idf_computer.py] [process_batch] [149] <You played 18830 times, survive 18830 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:12:20,527] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_150000_160000.txt loaded>
+[2018-05-10 21:12:20,652] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_10000_20000.txt loaded>
+[2018-05-10 21:12:20,724] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:12:21,492] [INFO] [2730] [139854575019776] [idf_computer.py] [process_batch] [149] <You played 18859 times, survive 18859 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:12:21,501] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_70000_80000.txt loaded>
+[2018-05-10 21:12:21,589] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_120000_130000.txt loaded>
+[2018-05-10 21:12:21,660] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:12:22,404] [INFO] [2730] [139854575019776] [idf_computer.py] [process_batch] [149] <You played 18992 times, survive 18992 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:12:22,412] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_80000_90000.txt loaded>
+[2018-05-10 21:12:22,496] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_40000_50000.txt loaded>
+[2018-05-10 21:12:22,572] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:12:23,334] [INFO] [2730] [139854575019776] [idf_computer.py] [process_batch] [149] <You played 18950 times, survive 18950 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:12:23,343] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_140000_150000.txt loaded>
+[2018-05-10 21:12:23,427] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_170000_180000.txt loaded>
+[2018-05-10 21:12:23,501] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:12:24,266] [INFO] [2730] [139854575019776] [idf_computer.py] [process_batch] [149] <You played 18484 times, survive 18484 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:12:24,275] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_130000_140000.txt loaded>
+[2018-05-10 21:12:24,356] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_110000_120000.txt loaded>
+[2018-05-10 21:12:24,432] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:12:25,204] [INFO] [2730] [139854575019776] [idf_computer.py] [process_batch] [149] <You played 19280 times, survive 19280 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:12:25,213] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_90000_100000.txt loaded>
+[2018-05-10 21:12:25,348] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_160000_170000.txt loaded>
+[2018-05-10 21:12:25,424] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:12:26,226] [INFO] [2730] [139854575019776] [idf_computer.py] [process_batch] [149] <You played 18825 times, survive 18825 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:12:26,236] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_60000_70000.txt loaded>
+[2018-05-10 21:12:26,318] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_180000_190000.txt loaded>
+[2018-05-10 21:12:26,332] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:12:26,794] [INFO] [2730] [139854575019776] [idf_computer.py] [process_batch] [149] <You played 11461 times, survive 11461 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:12:26,803] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_30000_40000.txt loaded>
+[2018-05-10 21:12:26,878] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_0_10000.txt loaded>
+[2018-05-10 21:12:26,951] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <1 files loaded, now load base info>
+[2018-05-10 21:12:27,699] [INFO] [2730] [139854575019776] [idf_computer.py] [process_batch] [149] <You played 18985 times, survive 18985 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:12:27,708] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <file w2v_0_50000_60000.txt loaded>
+[2018-05-10 21:12:27,792] [INFO] [2730] [139854575019776] [idf_computer.py] [<module>] [183] <here is the last shipment>
+[2018-05-10 21:12:28,171] [INFO] [2730] [139854575019776] [idf_computer.py] [process_batch] [149] <You played 9555 times, survive 9555 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:14:17,780] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_20000_30000.txt loaded>
+[2018-05-10 21:14:17,861] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_100000_110000.txt loaded>
+[2018-05-10 21:14:17,950] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 21:14:18,446] [INFO] [2779] [140705608218368] [idf_computer.py] [process_batch] [148] <You played 18830 times, survive 18830 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:14:18,454] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_150000_160000.txt loaded>
+[2018-05-10 21:14:18,581] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_10000_20000.txt loaded>
+[2018-05-10 21:14:18,655] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 21:14:19,149] [INFO] [2779] [140705608218368] [idf_computer.py] [process_batch] [148] <You played 18859 times, survive 18859 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:14:19,158] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_70000_80000.txt loaded>
+[2018-05-10 21:14:19,247] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_120000_130000.txt loaded>
+[2018-05-10 21:14:19,323] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 21:14:19,800] [INFO] [2779] [140705608218368] [idf_computer.py] [process_batch] [148] <You played 18992 times, survive 18992 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:14:19,808] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_80000_90000.txt loaded>
+[2018-05-10 21:14:19,891] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_40000_50000.txt loaded>
+[2018-05-10 21:14:19,964] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 21:14:20,456] [INFO] [2779] [140705608218368] [idf_computer.py] [process_batch] [148] <You played 18950 times, survive 18950 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:14:20,464] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_140000_150000.txt loaded>
+[2018-05-10 21:14:20,551] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_170000_180000.txt loaded>
+[2018-05-10 21:14:20,627] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 21:14:21,123] [INFO] [2779] [140705608218368] [idf_computer.py] [process_batch] [148] <You played 18484 times, survive 18484 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:14:21,132] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_130000_140000.txt loaded>
+[2018-05-10 21:14:21,213] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_110000_120000.txt loaded>
+[2018-05-10 21:14:21,291] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 21:14:21,780] [INFO] [2779] [140705608218368] [idf_computer.py] [process_batch] [148] <You played 19280 times, survive 19280 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:14:21,788] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_90000_100000.txt loaded>
+[2018-05-10 21:14:21,924] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_160000_170000.txt loaded>
+[2018-05-10 21:14:22,003] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 21:14:22,515] [INFO] [2779] [140705608218368] [idf_computer.py] [process_batch] [148] <You played 18825 times, survive 18825 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:14:22,525] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_60000_70000.txt loaded>
+[2018-05-10 21:14:22,607] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_180000_190000.txt loaded>
+[2018-05-10 21:14:22,621] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 21:14:22,919] [INFO] [2779] [140705608218368] [idf_computer.py] [process_batch] [148] <You played 11461 times, survive 11461 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:14:22,928] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_30000_40000.txt loaded>
+[2018-05-10 21:14:23,002] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_0_10000.txt loaded>
+[2018-05-10 21:14:23,075] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <1 files loaded, now load base info>
+[2018-05-10 21:14:23,557] [INFO] [2779] [140705608218368] [idf_computer.py] [process_batch] [148] <You played 18985 times, survive 18985 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>
+[2018-05-10 21:14:23,565] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <file w2v_0_50000_60000.txt loaded>
+[2018-05-10 21:14:23,650] [INFO] [2779] [140705608218368] [idf_computer.py] [<module>] [182] <here is the last shipment>
+[2018-05-10 21:14:23,927] [INFO] [2779] [140705608218368] [idf_computer.py] [process_batch] [148] <You played 9555 times, survive 9555 times,             poisoned 0 times, died 0 times.
+                 survival rate: 1.0, poison rate: 0.0, death rate: 0.0.>

@@ -8,6 +8,8 @@ import re
 import sys
 import copy
 import traceback
+from urllib.parse import urlparse
+from datetime import datetime
 
 # 通用类型转换
 def tryconvert(value, default, *types):
@@ -20,10 +22,21 @@ def tryconvert(value, default, *types):
         except:
             continue
     return default
+    
+# MapReduce函数
+def map_reduce(mydict,key,inc=1):
+    if key in mydict.keys():
+        mydict[key]+=inc
+    else:
+        mydict[key]=inc
+            
+# 词典排序，输出结果为元组列表
+def sort_dict(mydict):
+    return sorted(mydict.items(), key=lambda d: d[1])
 
-int_data_convert = lambda v: tryconvert(v, 0, int)
-str_data_convert = lambda v: tryconvert(v, '', str)
-time_now = lambda: time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+int_data_convert =  lambda v: tryconvert(v, 0, int)
+str_data_convert =  lambda v: tryconvert(v, '', str)
+time_now =          lambda: time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
 # 全局变量
 TYPE_CONVERT_MAP = {
@@ -82,6 +95,47 @@ def get_size(obj, seen=None):
     elif hasattr(obj, '__iter__') and not isinstance(obj, (str, bytes, bytearray)):
         size += sum([get_size(i, seen) for i in obj])
     return size
+    
+# 从字符串中获取格式化时间
+def gettime_from_string(time_str):
+    # 输入字符格式 2018年04月17日 12:57:40
+    # 标准时间格式 1970-01-01 00:00:00
+    month =   0
+    year =    0
+    day =     0
+    hour =    0
+    minute =  0
+    second =  0
+    
+    result = re.findall('(\d+)年(\d+)月(\d+)日',time_str)
+    if result:
+        result = result[0]
+        year =  int(result[0])
+        month = int(result[1])
+        day =   int(result[2])
+    else:
+        return ''
+        
+    result = re.findall('(\d+)[:：](\d+)[:：](\d+)',time_str)
+    if result:
+        result = result[0]
+        hour =   int(result[0])
+        minute = int(result[1])
+        second = int(result[2])
+    
+    try:
+        dt = datetime(year,month,day,hour,minute,second)
+        return dt.strftime("%Y-%m-%d %H:%M:%S")
+    except:
+        return ''
+        
+def check_url(url):
+    # URL 检测函数，scheme netloc path必须都有
+    url_info = urlparse(url)
+    if not (url_info.scheme and url_info.netloc and url_info.path):
+        return False
+    else:
+        return True
 
 # 通用计时器
 class StopWatch(object):
